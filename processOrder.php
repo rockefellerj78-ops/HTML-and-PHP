@@ -19,7 +19,13 @@ $total = $subtotal + $tax;
   <link rel="stylesheet" href="styles.css">
 </head>
 <h2>Результаты заказа</h2>
-<p>Шины: <?= $t1 ?>; Масло: <?= $t2 ?>; Свечи: <?= $t3 ?></p>
+<table>
+  <tr><th>Товар</th><th>Количество</th></tr>
+  <tr><td>Шины</td><td><?=$t1?></td></tr>
+  <tr><td>Масло</td><td><?=$t2?></td></tr>
+  <tr><td>Свечи</td><td><?=$t3?></td></tr>
+</table>
+
 <p>Итого без налога: <?= $subtotal ?> руб.</p>
 <p>Налог (<?= (int)(TAX_RATE*100) ?>%): <?= $tax ?> руб.</p>
 <p><b>К оплате: <?= $total ?> руб.</b></p>
