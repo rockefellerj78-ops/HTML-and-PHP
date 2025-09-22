@@ -1,12 +1,24 @@
 <!doctype html>
 <meta charset="utf-8">
-<h2>Форма заказа (статичная)</h2>
+<h2>Форма заказа</h2>
 
-<table border="1">
-  <tr><th>Товар</th><th>Количество</th></tr>
-  <tr><td>Автопокрышки</td><td><input></td></tr>
-  <tr><td>Машинное масло</td><td><input></td></tr>
-  <tr><td>Свечи зажигания</td><td><input></td></tr>
-</table>
+<form method="post" action="processOrder.php">
+  <table border="1">
+    <tr><th>Товар</th><th>Количество</th></tr>
+    <tr><td>Автопокрышки</td><td><input name="tovar1"></td></tr>
+    <tr><td>Машинное масло</td><td><input name="tovar2"></td></tr>
+    <tr><td>Свечи зажигания</td><td><input name="tovar3"></td></tr>
+  </table>
 
-<button>Отправить (ничего не делает)</button>
+  <p>Как вы нашли компанию?
+    <select name="otkuda">
+      <option value="v1">Регулярный клиент</option>
+      <option value="v2">Через интернет</option>
+      <option value="v3">По объявлению</option>
+      <option value="v4">Узнал от знакомых, друзей</option>
+      <option value="v5">Другое</option>
+    </select>
+  </p>
+
+  <button type="submit">Отправить</button>
+</form>
