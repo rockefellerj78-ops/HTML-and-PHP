@@ -15,6 +15,9 @@ $total = $subtotal + $tax;
 ?>
 <!doctype html>
 <meta charset="utf-8">
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <h2>Результаты заказа</h2>
 <p>Шины: <?= $t1 ?>; Масло: <?= $t2 ?>; Свечи: <?= $t3 ?></p>
 <p>Итого без налога: <?= $subtotal ?> руб.</p>
