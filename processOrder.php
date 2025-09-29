@@ -8,6 +8,20 @@ define('TAX_RATE', 0.20);
 $t1 = (int)($_POST['tovar1'] ?? 0);
 $t2 = (int)($_POST['tovar2'] ?? 0);
 $t3 = (int)($_POST['tovar3'] ?? 0);
+$totalqty = (int)$t1 + (int)$t2 + (int)$t3;
+
+if ($totalqty === 0) {
+    // ранний ответ и остановка
+    ?>
+    <!doctype html>
+    <meta charset="utf-8">
+    <head><link rel="stylesheet" href="styles.css"></head>
+    <h2>Результаты заказа</h2>
+    <p>Вы ничего не заказали на предыдущей странице!</p>
+    <p><a href="orderform.html">Назад</a></p>
+    <?php
+    exit;
+}
 
 $subtotal = $t1*TIREPRICE + $t2*OILPRICE + $t3*SPARKPRICE;
 $tax = $subtotal*TAX_RATE;
