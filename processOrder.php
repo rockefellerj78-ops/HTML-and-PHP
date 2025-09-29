@@ -8,6 +8,7 @@ define('TAX_RATE', 0.20);
 $t1 = (int)($_POST['tovar1'] ?? 0);
 $t2 = (int)($_POST['tovar2'] ?? 0);
 $t3 = (int)($_POST['tovar3'] ?? 0);
+$find = $_POST['otkuda'] ?? '';
 $totalqty = (int)$t1 + (int)$t2 + (int)$t3;
 
 if ($totalqty === 0) {
@@ -40,9 +41,19 @@ $discount = $t1 * TIREPRICE * $discountPercent / 100;
 $subtotalWithDiscount = $subtotal - $discount;
 $tax = $subtotalWithDiscount * TAX_RATE;
 $total = $subtotalWithDiscount + $tax;
+$findMsg = 'Источник не определён.';
+if ($find === 'v1') {
+    $findMsg = 'Регулярный клиент';
+} elseif ($find === 'v2') {
+    $findMsg = 'Через интернет';
+} elseif ($find === 'v3') {
+    $findMsg = 'По объявлению';
+} elseif ($find === 'v4') {
+    $findMsg = 'Узнал от знакомых/друзей';
+} elseif ($find === 'v5') {
+    $findMsg = 'Другое';
+}
 
-$tax = $subtotal*TAX_RATE;
-$total = $subtotal + $tax;
 ?>
 <!doctype html>
 <meta charset="utf-8">
@@ -74,3 +85,4 @@ $total = $subtotal + $tax;
 <p><b>К оплате: <?= $total ?> руб.</b></p>
 
 <p><a href="orderform.html">Назад</a></p>
+<p>Источник клиента: <?= $findMsg ?></p>
