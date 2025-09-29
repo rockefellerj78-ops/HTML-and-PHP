@@ -35,9 +35,17 @@ $total = $subtotal + $tax;
 <h2>Результаты заказа</h2>
 <table>
   <tr><th>Товар</th><th>Количество</th></tr>
-  <tr><td>Шины</td><td><?=$t1?></td></tr>
-  <tr><td>Масло</td><td><?=$t2?></td></tr>
-  <tr><td>Свечи</td><td><?=$t3?></td></tr>
+<?php if ($t1 > 0): ?>
+  <tr><td>Шины</td><td><?= $t1 ?></td></tr>
+<?php endif; ?>
+
+<?php if ($t2 > 0): ?>
+  <tr><td>Масло</td><td><?= $t2 ?></td></tr>
+<?php endif; ?>
+
+<?php if ($t3 > 0): ?>
+  <tr><td>Свечи</td><td><?= $t3 ?></td></tr>
+<?php endif; ?>
 </table>
 
 <p>Итого без налога: <?= $subtotal ?> руб.</p>
