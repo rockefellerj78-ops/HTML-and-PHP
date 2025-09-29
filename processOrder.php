@@ -24,6 +24,23 @@ if ($totalqty === 0) {
 }
 
 $subtotal = $t1*TIREPRICE + $t2*OILPRICE + $t3*SPARKPRICE;
+// скидка только на шины
+$discountPercent = 0;
+if ($t1 >= 10 && $t1 <= 49) {
+    $discountPercent = 5;
+} elseif ($t1 >= 50 && $t1 <= 99) {
+    $discountPercent = 10;
+} elseif ($t1 >= 100) {
+    $discountPercent = 15;
+}
+
+$discount = $t1 * TIREPRICE * $discountPercent / 100;
+
+// пересчитываем суммы с учётом скидки
+$subtotalWithDiscount = $subtotal - $discount;
+$tax = $subtotalWithDiscount * TAX_RATE;
+$total = $subtotalWithDiscount + $tax;
+
 $tax = $subtotal*TAX_RATE;
 $total = $subtotal + $tax;
 ?>
@@ -48,7 +65,12 @@ $total = $subtotal + $tax;
 <?php endif; ?>
 </table>
 
-<p>Итого без налога: <?= $subtotal ?> руб.</p>
+<?php if ($discountPercent > 0): ?>
+  <p>Скидка на шины (<?= $discountPercent ?>%): −<?= $discount ?> руб.</p>
+<?php endif; ?>
+
+<p>Итого без налога (после скидки): <?= $subtotalWithDiscount ?> руб.</p>
 <p>Налог (<?= (int)(TAX_RATE*100) ?>%): <?= $tax ?> руб.</p>
 <p><b>К оплате: <?= $total ?> руб.</b></p>
+
 <p><a href="orderform.html">Назад</a></p>
