@@ -1,16 +1,15 @@
 <!doctype html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="../styles.css">
-<title>Лаба 4 — строки и регулярные выражения</title>
 
-<h1>Лаба 4: примеры и задание</h1>
+<h1>Строки и регулярные выражения</h1>
 <ol>
-  <li><a href="1.php">1.php — проверка числа (1..77 цифр)</a></li>
-  <li><a href="2.php">2.php — проверка логина (a-zA-Z0-9_)</a></li>
-  <li><a href="3.php">3.php — замена «запрещённых слов»</a></li>
-  <li><a href="4.php">4.php — собрать все &lt;h1&gt; из 4.htm</a></li>
-  <li><a href="5.php">5.php — заменить первый &lt;p&gt; на &lt;h2&gt;</a></li>
-  <li><a href="6.php">6.php — три одинаковых символа подряд</a></li>
-  <li><a href="7.php">7.php — парсер ссылок из 7.htm</a></li>
-  <li><a href="feedback.html">Интеллектуальная форма обратной связи</a></li>
+  <li><a href="01_validate_number.php">01 — Проверка числа (1..77 цифр)</a></li>
+  <li><a href="02_validate_login.php">02 — Проверка логина (a-zA-Z0-9_)</a></li>
+  <li><a href="03_replace_forbidden_words.php">03 — Замена «запрещённых слов»</a></li>
+  <li><a href="04_extract_h1.php">04 — Собрать все &lt;h1&gt; (из sample_headings.html)</a></li>
+  <li><a href="05_replace_first_paragraph.php">05 — Первый &lt;p&gt; → &lt;h2&gt; (в sample_headings.html)</a></li>
+  <li><a href="06_detect_triple_chars.php">06 — Три одинаковых символа подряд</a></li>
+  <li><a href="07_parse_links.php">07 — Парсер ссылок (из sample_links.html)</a></li>
+  <li><a href="10_feedback_form.html">Форма обратной связи</a></li>
 </ol>
